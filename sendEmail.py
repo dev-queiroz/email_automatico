@@ -3,7 +3,6 @@ from flask_mail import Mail, Message
 from apscheduler.schedulers.blocking import BlockingScheduler
 import datetime
 
-
 app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
@@ -55,7 +54,8 @@ scheduler.start()
 
 
 def send_email_function(email):
-    msg = Message('Assunto do Email', sender='seu_nome@gmail.com', recipients=[email])  # Substitua pelo seu email
+    # Substitua pelo seu email
+    msg = Message('Assunto do Email', sender='queirozdouglas466@gmail.com', recipients=[email])
     msg.body = 'Este é o corpo do email que será enviado automaticamente.'  # Substitua pelo conteúdo do email
     mail.send(msg)
 
